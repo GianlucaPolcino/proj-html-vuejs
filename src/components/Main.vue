@@ -53,12 +53,54 @@
               </div>
           </div>
       </div>
+
+      <!-- THIRD SECTION -->
+      
+      <div class="gp-third-section">
+          <div class="container">
+            <div class="row">
+
+              <div class="col-6">
+                  <div class="gp-courses shadow-lg rounded-3">
+                    <img src="../assets/img/new-corner.jpg" alt="">
+                    <div class="text-center container">
+                        <h2 class="pb-5">Courses</h2>
+                        <p class="text-secondary gp-text pb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil vitae illo perferendis recusandae nam voluptate quia ad quam totam, tempore voluptates suscipit magnam ipsum maiores eveniet voluptas ea voluptatem vero.</p>
+                        <button class="btn btn-success gp-button mb-5">COURSE INFORMATION</button>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="col-6 pt-5 gp-course-choice">
+                  <div v-for="course in courses" :key="course.id" class="d-inline-block text-center p-2">
+                      <img class="gp-course-img pb-3" :src="course.img" alt="course.img">
+                      <h4 class="pb-3">{{course.title}}</h4>
+                      <button class="btn btn-outline-primary">LEARN MORE</button>
+                  </div>
+              </div>
+          </div>
+         </div>
+      </div>
+
+      <!-- FOURTH SECTION -->
+
+      <div>
+          <svg class="fusion-big-triangle-candy" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none" style="fill:#e4eaed;padding:0;"><path d="M-1 -1 L50 99 L101 -1 Z"></path></svg>
+      </div>
   </div>
 </template>
 
 <script>
+
+import courses from "../assets/js/courses";
 export default {
     name: 'Main',
+
+    data(){
+        return{
+            courses,
+        }
+    }
 
 }
 </script>
@@ -69,6 +111,12 @@ export default {
 
     .gp-text{
         line-height: 30px;
+    }
+
+    .gp-button{
+        background-color: #79b27b !important;
+        border: 1px solid #79b27b !important;
+        border-radius: 20px !important;
     }
 
     .gp-lesson{
@@ -83,11 +131,6 @@ export default {
             background-color: #e5e8eb;
         }
         
-        .gp-button{
-            background-color: #79b27b !important;
-            border: 1px solid #79b27b !important;
-            border-radius: 18px;
-        }
     }
 
     .gp-vertical{
@@ -95,4 +138,46 @@ export default {
         color: white;
         background-image: url(../assets/img/horizontal-cta-background.jpg);
     }
+
+    .gp-third-section{
+        height: 500px;
+        background-image: url(../assets/img/promise-background.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        // background-attachment: fixed;
+        background-position: 100% 99%;
+    }
+
+    .gp-courses{
+        margin-top: -40px;
+        background-color: white;
+        overflow: hidden;
+
+        img{
+            width: 80px;
+        }
+    }
+    
+    .gp-course-choice{
+        img{
+            width: 160px;
+        }
+
+        h4{
+            color: #7f9ea8;
+        }
+
+        button{
+            color: #7f9ea8;
+            border: 1px solid #7f9ea8 !important;
+            border-radius: 20px !important;
+
+            &:hover{
+                background-color: #7f9ea8 !important;
+            }
+        }
+
+        
+    }
+    
 </style>
