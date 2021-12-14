@@ -3,11 +3,11 @@
         <div class="top-header">
             <div class="container h-100">
                 <div class="row justify-content-between align-items-center h-100">
-                    <div class="col">
+                    <div class="col pt-3">
                         <p>We have a 95% Successful Pass Rate!</p>
                     </div>
 
-                    <div class="col text-end">
+                    <div class="col pt-3 text-end">
                         <p> <i class="fas fa-phone me-2"></i> 
                             Give us a call to book your tuition! 1-800-555-555
                         </p>
