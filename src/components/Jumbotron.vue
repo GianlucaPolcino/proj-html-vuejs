@@ -95,7 +95,7 @@ methods:{
 
                 .gp-active{
                     color: #79b27b;
-                    padding-bottom: 10px;
+                    padding-bottom: 6px;
                     border-bottom: 4px solid #79b27b;
                 }
             }
