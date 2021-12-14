@@ -39,5 +39,9 @@ export default {
         height: 50px;
         background-color: #484848;
         color: #e5e8eb;
+
+        p{
+            font-size: 12px;
+        }
     }
 </style>
