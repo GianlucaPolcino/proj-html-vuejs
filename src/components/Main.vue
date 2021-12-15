@@ -60,7 +60,7 @@
           <div class="container">
             <div class="row">
 
-              <div class="col-6">
+              <div class="col-lg-6 col-md-12">
                   <div class="gp-courses shadow-lg rounded-3">
                     <img src="../assets/img/new-corner.jpg" alt="">
                     <div class="text-center container">
@@ -71,7 +71,7 @@
                   </div>
               </div>
 
-              <div class="col-6 pt-5 gp-course-choice">
+              <div class="col-lg-6 col-md-12 pt-5 gp-course-choice">
                   <div v-for="course in courses" :key="course.id" class="d-inline-block text-center p-2">
                       <img class="gp-course-img pb-3" :src="course.img" alt="course.img">
                       <h4 class="pb-3">{{course.title}}</h4>
@@ -82,11 +82,44 @@
          </div>
       </div>
 
-      <!-- FOURTH SECTION -->
+      <!-- INTERLUDE BACKGROUND -->
 
       <div>
           <svg class="fusion-big-triangle-candy" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none" style="fill:#e4eaed;padding:0;"><path d="M-1 -1 L50 99 L101 -1 Z"></path></svg>
       </div>
+
+      <!-- FOURTH SECTION -->
+
+      <div class="gp-wrapper p-5">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col gp-border py-5 mx-3">
+                    <div class="circle-border-1">
+                        <div class="circle-1 d-flex align-items-center justify-content-center">
+                            <h4 class="fw-bold">95%</h4>
+                        </div>
+                    </div>
+              </div>
+
+              <div class="col gp-border py-5 mx-3">
+                    <div class="circle-border-2">
+                        <div class="circle-2 d-flex align-items-center justify-content-center">
+                            <h4 class="fw-bold">100%</h4>
+                        </div>
+                    </div>
+              </div>
+
+              <div class="col gp-border py-5 mx-3">
+                    <div class="circle-border-3">
+                        <div class="circle-3 d-flex align-items-center justify-content-center">
+                            <h4 class="fw-bold">0%</h4>
+                        </div>
+                    </div>
+              </div>
+          </div>
+         </div>
+      </div>
+
   </div>
 </template>
 
@@ -140,6 +173,8 @@ export default {
     }
 
     .gp-third-section{
+
+
         height: 500px;
         background-image: url(../assets/img/promise-background.jpg);
         background-size: cover;
@@ -179,5 +214,83 @@ export default {
 
         
     }
+
+   .gp-wrapper{
+
+        margin-top: -30px;
+        background-color: white;
+        z-index: 999;
+
+        .gp-border{
+            border-top: 4px solid #79b27b;
+            border-radius: 4px;
+        }
+
+        .circle-1 {
+            position: relative;
+            top: 5px;
+            left: 5px;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            background-color: #ffffff;
+        }
+
+        .circle-border-1 {
+            position: relative;
+            text-align: center;
+            width: 110px;
+            height: 110px;
+            margin-left: 33%;
+            border-radius: 100%;
+            background-color: #E53B3B;
+            background: linear-gradient(270deg, #79b27b 50%, transparent 50%), linear-gradient(60deg, #79b27b 50%, lightgray 50%)
+        }
+
+        .circle-2 {
+            position: relative;
+            top: 5px;
+            left: 5px;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            background-color: #ffffff;
+        }
+
+        .circle-border-2 {
+            position: relative;
+            text-align: center;
+            width: 110px;
+            height: 110px;
+            margin-left: 33%;
+            border-radius: 100%;
+            background-color: #E53B3B;
+            background: linear-gradient(270deg, #79b27b 50%, transparent 50%), linear-gradient(90deg, #79b27b 50%, lightgray 50%)
+        }
+
+        .circle-3 {
+            position: relative;
+            top: 5px;
+            left: 5px;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            background-color: #ffffff;
+        }
+
+        .circle-border-3 {
+            position: relative;
+            text-align: center;
+            width: 110px;
+            height: 110px;
+            margin-left: 33%;
+            border-radius: 100%;
+            background-color: #E53B3B;
+            background: linear-gradient(0deg, lightgray 50%, transparent 50%), linear-gradient(360deg, transparent 50%, lightgray 50%)
+        }
+   }
     
 </style>
