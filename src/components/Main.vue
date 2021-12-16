@@ -92,32 +92,77 @@
 
       <div class="gp-wrapper p-5">
           <div class="container">
-            <div class="row justify-content-center">
-              <div class="col gp-border py-5 mx-3">
+            <div class="row">
+              <div class="col gp-border py-5 mx-3 shadow-lg text-center">
                     <div class="circle-border-1">
                         <div class="circle-1 d-flex align-items-center justify-content-center">
                             <h4 class="fw-bold">95%</h4>
                         </div>
                     </div>
+                    <h6 class="pt-5 fw-bold text-secondary">PASS RATE</h6>
               </div>
 
-              <div class="col gp-border py-5 mx-3">
+              <div class="col gp-border py-5 mx-3 shadow-lg text-center">
                     <div class="circle-border-2">
                         <div class="circle-2 d-flex align-items-center justify-content-center">
                             <h4 class="fw-bold">100%</h4>
                         </div>
                     </div>
+                    <h6 class="pt-5 fw-bold text-secondary">REFERRAL RATE</h6>
               </div>
 
-              <div class="col gp-border py-5 mx-3">
+              <div class="col gp-border py-5 mx-3 shadow-lg text-center">
                     <div class="circle-border-3">
                         <div class="circle-3 d-flex align-items-center justify-content-center">
                             <h4 class="fw-bold">0%</h4>
                         </div>
                     </div>
+                    <h6 class="pt-5 fw-bold text-secondary">ACCIDENT RATE</h6>
               </div>
           </div>
          </div>
+      </div>
+
+      <!-- FIFTH SECTION -->
+
+      <div class="container pt-5">
+          <div class="row">
+              <div class="col-12">
+                  <h2 class="fw-bold">Your Instructors</h2>
+              </div>
+
+              <div class="col-9 pt-3">
+                  <h6 class="text-secondary gp-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. A corrupti eius id repellat natus earum necessitatibus, voluptatibus pariatur veniam atque rerum illo praesentium libero odio officiis repudiandae quae itaque voluptas.
+                  </h6>
+              </div>
+
+              <div class="col pt-3">
+                  <button class="btn btn-success gp-button px-5">
+                      MORE ABOUT US
+                  </button>
+              </div>
+          </div>
+
+            <!-- CARDS SECTION -->
+
+          <div class="row pt-5">
+              <div class="col gp-border py-5 mx-3 shadow-lg text-center"
+              v-for="instructor in instructors" :key="instructor.id">
+                    <img class="w-100 pb-5" :src="instructor.img" alt="">
+                    <h3 class="fw-bold">{{instructor.name}}</h3>
+                    <i class="fab fa-facebook-f pe-3 text-secondary"></i>
+                    <i class="fab fa-twitter pe-3 text-secondary"></i>
+                    <i class="fab fa-instagram text-secondary"></i>
+                    <p class="pt-3 text-secondary">{{instructor.description}}</p>
+              </div>
+          </div>
+      </div>
+
+      <!-- TESTIMONIALS SECTION -->
+
+      <div class="gp-testimonials">
+          
       </div>
 
   </div>
@@ -126,12 +171,14 @@
 <script>
 
 import courses from "../assets/js/courses";
+import instructors from "../assets/js/instructors";
 export default {
     name: 'Main',
 
     data(){
         return{
             courses,
+            instructors,
         }
     }
 
@@ -140,10 +187,10 @@ export default {
 
 <style lang="scss">
     
-    @import "~@fortawesome/fontawesome-free/css/all.min.css";
+    @import "~@fortawesome/fontawesome-free/css/all.css";
 
     .gp-text{
-        line-height: 30px;
+        line-height: 40px;
     }
 
     .gp-button{
@@ -153,7 +200,7 @@ export default {
     }
 
     .gp-lesson{
-        margin-top: -40px;
+        margin-top: -90px;
         background-color: white;
 
         h2{
@@ -179,7 +226,6 @@ export default {
         background-image: url(../assets/img/promise-background.jpg);
         background-size: cover;
         background-repeat: no-repeat;
-        // background-attachment: fixed;
         background-position: 100% 99%;
     }
 
@@ -215,17 +261,17 @@ export default {
         
     }
 
+    .gp-border{
+        background-color: white;
+        border-top: 4px solid #79b27b;
+        border-radius: 4px;
+            
+    }
+
    .gp-wrapper{
 
-        margin-top: -30px;
-        background-color: white;
-        z-index: 999;
-
-        .gp-border{
-            border-top: 4px solid #79b27b;
-            border-radius: 4px;
-        }
-
+    margin-top: -90px;
+    
         .circle-1 {
             position: relative;
             top: 5px;
@@ -291,6 +337,8 @@ export default {
             background-color: #E53B3B;
             background: linear-gradient(0deg, lightgray 50%, transparent 50%), linear-gradient(360deg, transparent 50%, lightgray 50%)
         }
+
+        
    }
     
 </style>
