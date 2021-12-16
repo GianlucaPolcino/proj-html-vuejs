@@ -13,7 +13,7 @@
 
               <div class="col-6">
                   <div class="gp-lesson p-5 text-center shadow-lg rounded-3">
-                      <h2>First Lesson Free!</h2>
+                      <h2 class="fw-bold">First Lesson Free!</h2>
                       <h5 class="text-secondary p-5">When you make a block booking with us your first lesson is included free.</h5>
 
                        <div class="mb-3">
@@ -64,7 +64,7 @@
                   <div class="gp-courses shadow-lg rounded-3">
                     <img src="../assets/img/new-corner.jpg" alt="">
                     <div class="text-center container">
-                        <h2 class="pb-5">Courses</h2>
+                        <h2 class="fw-bold pb-5">Courses</h2>
                         <p class="text-secondary gp-text pb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil vitae illo perferendis recusandae nam voluptate quia ad quam totam, tempore voluptates suscipit magnam ipsum maiores eveniet voluptas ea voluptatem vero.</p>
                         <button class="btn btn-success gp-button mb-5">COURSE INFORMATION</button>
                     </div>
@@ -138,7 +138,7 @@
               </div>
 
               <div class="col pt-3">
-                  <button class="btn btn-success gp-button px-5">
+                  <button class="btn btn-success gp-button w-100">
                       MORE ABOUT US
                   </button>
               </div>
@@ -162,7 +162,81 @@
       <!-- TESTIMONIALS SECTION -->
 
       <div class="gp-testimonials">
-          
+          <div class="gp-container h-100">
+              <div class="row h-100 justify-content-center align-items-center">
+                  <div class="col text-center">
+                      <h2 class="py-3 fw-bold">Testimonials</h2>
+                      <h5 class="text-secondary">Here's what our happy drivers had to say about our services:</h5>
+                      <img class="pt-5" src="../assets/img/testimonial-sophia.png" alt="">
+                      <h5 class="text-secondary pt-4 gp-text">Avada Driving School really helped build my confidence behind the wheel and with driving in general, and they got me a first time pass!</h5>
+                      <h5 class="text-secondary">Highly reccomended!</h5>
+                      <div class="text-secondary pt-3">
+                          <i class="fas fa-circle pe-2"></i>
+                          <i class="far fa-circle pe-2"></i>
+                          <i class="far fa-circle pe-2"></i>
+                          <i class="far fa-circle pe-2"></i>
+                          <i class="far fa-circle"></i>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- LATEST NEWS SECTION -->
+
+      <div class="gp-news">
+          <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col">
+                      <div class="gp-news-wrapper text-center">
+                          <h2 class="fw-bold py-5">Latest News</h2>
+
+                          <div class="container">
+                              <div class="row">
+
+                                  <div class="col" v-for="article in articles" :key="article.id">
+                                      <img class="w-100" :src="article.img" alt="">
+                                      <h5 class="pt-3 gp-color">{{article.title}}</h5>
+                                      <span class="text-secondary">{{article.date}} |</span> <span class="gp-color">{{article.commentsNumber}} Comments</span>
+                                      <p class="py-3 text-secondary">{{article.articlePreview}}</p>
+                                  </div>
+
+                              </div>
+                          </div>
+                          
+                          <div class="pt-5 pb-1">
+                            <button class="btn btn-succss gp-button text-white fw-bold">MORE FROM THE BLOG</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="container">
+              <div class="row">
+                  <div class="col">
+                    <img class="w-100" src="../assets/img/latestnews-bottom.png" alt="">
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- NEWSLETTER SECTION -->
+
+      <div class="gp-newsletter">
+          <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col-6 text-center">
+                      <h2 class="py-5 fw-bold">Sign up to our Newsletter</h2>
+                      <input class="w-100 py-1" type="text" name="">
+
+                      <div class="py-4">
+                        <button class="btn btn-success gp-button w-100">SUBSCRIBE</button>
+                      </div>
+                      <span class="text-secondary">(We don't share your data with anybody, and only use it for its intended purpose)</span>
+                  </div>
+              </div>
+          </div>
       </div>
 
   </div>
@@ -172,6 +246,8 @@
 
 import courses from "../assets/js/courses";
 import instructors from "../assets/js/instructors";
+import articles from "../assets/js/news";
+
 export default {
     name: 'Main',
 
@@ -179,6 +255,7 @@ export default {
         return{
             courses,
             instructors,
+            articles,
         }
     }
 
@@ -339,6 +416,58 @@ export default {
         }
 
         
+   }
+
+   .gp-testimonials{
+       height: 800px;
+       margin-top: -40px;
+       background-image: url(../assets/img/testimonial-background.jpg);
+       background-size: cover;
+       z-index: -1;
+
+       .gp-container{
+           width: 50%;
+           margin: 0 auto;
+
+           img{
+           width: 200px;
+       }
+       }
+   }
+
+   .gp-news{
+       height: 800px;
+       background-image: url(../assets/img/latestnews-background.jpg);
+       background-size: cover;
+
+       .gp-news-wrapper{
+           margin-top: -40px;
+           background-color: white;
+           border-top: 4px solid #7f9ea8;
+           border-radius: 12px 12px 0 0;
+
+           span{
+               font-size: 12px;
+           }
+
+           .gp-color{
+               color: #79b27b;
+           }
+       }
+   }
+
+   .gp-newsletter{
+       height: 320px;
+       background-image: url(../assets/img/newsletter_background.jpg);
+       background-size: cover;
+
+       input{
+           border: 1px solid lightgray;
+       }
+
+       span{
+           font-size: 12px;
+       }
    }
     
 </style>
